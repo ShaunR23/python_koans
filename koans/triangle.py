@@ -23,7 +23,7 @@ from xml.dom.minidom import Attr
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
     
-    if a + b > c and a + c > b and c + b > a:
+    if a + b > c and a + c > b and c + b > a: 
         if a == b or b == c or c == a:
             if a == b == c:
                 return 'equilateral'
