@@ -14,8 +14,8 @@ class AboutDecoratingWithFunctions(Koan):
         return "o/~ We all live in a broken submarine o/~"
 
     def test_decorators_can_modify_a_function(self):
-        self.assertRegex(self.mediocre_song(), __)
-        self.assertEqual(__, self.mediocre_song.wow_factor)
+        self.assertRegex(self.mediocre_song(), 'o/~ We all live in a broken submarine o/~')
+        self.assertEqual('COWBELL BABY!', self.mediocre_song.wow_factor)
 
     # ------------------------------------------------------------------
 
@@ -27,6 +27,7 @@ class AboutDecoratingWithFunctions(Koan):
     @xmltag
     def render_tag(self, name):
         return name
+    #returned llama which took place of fn(*args) from above function
 
     def test_decorators_can_change_a_function_output(self):
-        self.assertEqual(__, self.render_tag('llama'))
+        self.assertEqual('<llama/>', self.render_tag('llama'))
