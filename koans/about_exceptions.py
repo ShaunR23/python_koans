@@ -25,7 +25,7 @@ class AboutExceptions(Koan):
             ex2 = ex
 
         self.assertEqual('exception handled', result)
-
+         #self.fail always fails so it reassigns result
         self.assertEqual(True, isinstance(ex2, Exception))
         self.assertEqual(False, isinstance(ex2, RuntimeError))
 
@@ -56,7 +56,7 @@ class AboutExceptions(Koan):
             result = 'no damage done'
 
         self.assertEqual('no damage done', result)
-
+       
 
     def test_finally_clause(self):
         result = None
@@ -66,6 +66,6 @@ class AboutExceptions(Koan):
             # no code here
             pass
         finally:
-            result = 'always run'
+            result = 'always run' #result will always be 'always run'
 
         self.assertEqual('always run', result)

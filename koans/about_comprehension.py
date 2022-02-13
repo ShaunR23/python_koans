@@ -25,7 +25,7 @@ class AboutComprehension(Koan):
         self.assertEqual(5, len(feast))
         #5 items in the list
         self.assertEqual(3, len(comprehension))
-        #3 words less than 6 characters
+        # 3 items have more than 6 characters
 
     def test_unpacking_tuples_in_list_comprehensions(self):
         list_of_tuples = [(1, 'lumberjack'), (2, 'inquisition'), (4, 'spam')]

@@ -21,10 +21,10 @@ class AboutDecoratingWithClasses(Koan):
 
         self.assertEqual(23, max(7,23))
         self.assertEqual(10, max(10,-10))
-
+         #freezes certain arguments to let you reuse later
     def test_partial_that_wrappers_first_arg(self):
         max0 = functools.partial(self.maximum, 0)
-
+       #zero is frozen
         self.assertEqual(0, max0(-4))
         self.assertEqual(5, max0(5))
 
@@ -50,7 +50,7 @@ class AboutDecoratingWithClasses(Koan):
                 return self
             else:
                 # Decorating a bound method
-                return functools.partial(self, obj)
+                return functools.partial(self, obj)#passing it self as an arguments so its bound
 
     @doubleit
     def foo(self):
@@ -128,3 +128,4 @@ class AboutDecoratingWithClasses(Koan):
         self.assertEqual("D'oh, D'oh, D'oh, D'oh", self.homer())
         self.assertEqual('DOH!', self.homer.__doc__)
 
+    #pulls the doc from the function Homer

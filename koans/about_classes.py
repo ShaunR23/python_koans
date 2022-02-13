@@ -12,6 +12,7 @@ class AboutClasses(Koan):
         # NOTE: The .__name__ attribute will convert the class
         # into a string value.
         fido = self.Dog()
+        #class of fido equals Dog
         self.assertEqual('Dog', fido.__class__.__name__)
 
     def test_classes_have_docstrings(self):
@@ -109,20 +110,21 @@ class AboutClasses(Koan):
     def test_init_provides_initial_values_for_instance_variables(self):
         fido = self.Dog5("Fido")
         self.assertEqual('Fido', fido.name)
-
+        #set as we create the instance
     def test_args_must_match_init(self):
         with self.assertRaises(TypeError):
             self.Dog5()
 
         # THINK ABOUT IT:
         # Why is this so?
+        #it tries to assign name instantly, so without name it return an error?
 
     def test_different_objects_have_different_instance_variables(self):
         fido = self.Dog5("Fido")
         rover = self.Dog5("Rover")
 
         self.assertEqual(False, rover.name == fido.name)
-
+        #names dont match
     # ------------------------------------------------------------------
 
     class Dog6:
@@ -168,3 +170,4 @@ class AboutClasses(Koan):
 
         self.assertEqual('STRING', str("STRING"))
         self.assertEqual("'STRING'", repr("STRING"))
+        #still not sure exactly what repr does.
